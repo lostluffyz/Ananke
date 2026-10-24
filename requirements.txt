@@ -1,0 +1,11 @@
+numpy
+scipy
+pandas
+pydantic
+pyyaml
+streamlit
+plotly
+pytest
+reportlab
+scikit-learn
+joblib
