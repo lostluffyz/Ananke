@@ -110,15 +110,15 @@ reports `NEEDS_INPUT` instead of guessing.
 ## 🧠 How it works
 
 ```mermaid
-flowchart TD
-    M["Mission input<br/>mass · area · orbit · propulsion · disposal"]:::input
-    M --> P["Physics core<br/>lifetime · Δv · reliability · casualty"]:::physics
+flowchart LR
+    M["Mission input<br/>mass · area · orbit<br/>propulsion · disposal"]:::input
+    M --> P["Physics core<br/>lifetime · Δv<br/>reliability · casualty"]:::physics
     P --> K["Metric bundle<br/>10 derived scalars"]:::neutral
-    K --> R["Rule engine<br/>catalogue.yaml · 5 rules"]:::rules
-    R --> O["Mission output<br/>PASS / FAIL / WARN / NEEDS_INPUT"]:::rules
-    O --> D["Design optimiser<br/>cheapest compliant altitude"]:::output
+    K --> R["Rule engine<br/>catalogue.yaml<br/>5 rules"]:::rules
+    R --> O["Verdict<br/>PASS · FAIL<br/>WARN · NEEDS_INPUT"]:::rules
+    O --> D["Design optimiser<br/>cheapest compliant orbit"]:::output
     O --> F["PDF dossier<br/>draft mitigation plan"]:::output
-    S["ML surrogate<br/>random forest · preview only"]:::ml -.-> O
+    S["ML surrogate<br/>preview only"]:::ml -.-> O
 
     classDef input fill:#F3EDE6,stroke:#9F7B59,stroke-width:1.5px,color:#0C1520
     classDef physics fill:#E8F3EE,stroke:#17694C,stroke-width:1.5px,color:#0C1520
