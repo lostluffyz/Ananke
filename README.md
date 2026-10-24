@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/readme/hero.svg" alt="Ananke — design-stage debris compliance for Indian space missions" width="1200" />
+  <img src="assets/readme/hero.png" alt="Ananke — design-stage debris compliance for Indian space missions" width="1200" />
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@ draft PDF mitigation dossier — before the design is frozen.
 
 ---
 
-## 🛰️ Overview
+## <img src="assets/readme/icons/globe.svg" width="22" height="22" alt="" /> Overview
 
 India's debris rules are specific and testable. A mission must dispose within five
 years (or fly a controlled re-entry), demonstrate a post-mission disposal success
@@ -47,13 +47,13 @@ redesign.
 
 | The old way | With Ananke |
 |---|---|
-| ⏳ Compliance checked after design freeze | ⚡ Checked at the altitude you are considering, right now |
-| 📊 Rules in a spreadsheet, sources in an inbox | 📚 A YAML catalogue with a citation on every rule |
-| 🧮 Lifetime and Δv by hand | 🧮 Deterministic physics, unit-tested against published values |
-| 🧩 "Which orbit should we fly?" | 🧭 A search for the cheapest compliant design, under worst-case solar activity |
-| 📄 A dossier assembled at the end | 📄 A draft PDF generated from the same run |
+| Compliance checked after design freeze | Checked at the altitude you are considering, right now |
+| Rules in a spreadsheet, sources in an inbox | A YAML catalogue with a citation on every rule |
+| Lifetime and Δv by hand | Deterministic physics, unit-tested against published values |
+| "Which orbit should we fly?" | A search for the cheapest compliant design, under worst-case solar activity |
+| A dossier assembled at the end | A draft PDF generated from the same run |
 
-## 📸 Product tour
+## <img src="assets/readme/icons/product-tour.svg" width="22" height="22" alt="" /> Product tour
 
 **Screening result** — four headline cards, the ML preview beside the exact
 physics, and a per-rule trail with the calculation, limit, and source.
@@ -75,16 +75,16 @@ physics, and a per-rule trail with the calculation, limit, and source.
 </tr>
 </table>
 
-## ✨ Capabilities
+## <img src="assets/readme/icons/capabilities.svg" width="22" height="22" alt="" /> Capabilities
 
 | | |
 |---|---|
-| **🛰️ Orbital lifetime**<br/>Drag-integrated decay from the post-disposal altitude, reported as a best / nominal / worst band across low, nominal, and high solar activity. | **⛽ Disposal budget**<br/>Hohmann transfer, perigee lowering, and the rocket equation — with a 20% propellant margin and a signed fuel margin in kg. |
-| **🛡️ Rule engine**<br/>A data-driven catalogue with `PASS` / `FAIL` / `WARN` / `NEEDS_INPUT` outcomes, a citation for every rule, and a `warn_if` band on the lifetime rule. | **🧭 Design optimiser**<br/>Sweeps the altitude grid under worst-case solar activity and returns the cheapest compliant design — or `INFEASIBLE`, never a false pass. |
-| **🤖 ML preview**<br/>A hold-out-validated random forest for instant lifetime estimates, always shown next to the exact physics value it approximates. | **📄 Draft dossier**<br/>Six sections of evidence in a PDF: summary, lifetime, compliance table, suggested changes, methods, disclaimer. |
-| **🧪 Re-entry risk**<br/>Debris casualty area from surviving fragments, converted to expected casualties and blended across nominal and failure footprints. | **📚 Open methods**<br/>Every formula is visible in the source, documented in the code, and checked by the test suite — no black boxes in the compliance path. |
+| **<img src="assets/readme/icons/satellite.svg" width="18" height="18" alt="" /> Orbital lifetime**<br/>Drag-integrated decay from the post-disposal altitude, reported as a best / nominal / worst band across low, nominal, and high solar activity. | **<img src="assets/readme/icons/fuel.svg" width="18" height="18" alt="" /> Disposal budget**<br/>Hohmann transfer, perigee lowering, and the rocket equation — with a 20% propellant margin and a signed fuel margin in kg. |
+| **<img src="assets/readme/icons/shield-check.svg" width="18" height="18" alt="" /> Rule engine**<br/>A data-driven catalogue with `PASS` / `FAIL` / `WARN` / `NEEDS_INPUT` outcomes, a citation for every rule, and a `warn_if` band on the lifetime rule. | **<img src="assets/readme/icons/optimiser.svg" width="18" height="18" alt="" /> Design optimiser**<br/>Sweeps the altitude grid under worst-case solar activity and returns the cheapest compliant design — or `INFEASIBLE`, never a false pass. |
+| **<img src="assets/readme/icons/ml.svg" width="18" height="18" alt="" /> ML preview**<br/>A hold-out-validated random forest for instant lifetime estimates, always shown next to the exact physics value it approximates. | **<img src="assets/readme/icons/dossier.svg" width="18" height="18" alt="" /> Draft dossier**<br/>Six sections of evidence in a PDF: summary, lifetime, compliance table, suggested changes, methods, disclaimer. |
+| **<img src="assets/readme/icons/risk.svg" width="18" height="18" alt="" /> Re-entry risk**<br/>Debris casualty area from surviving fragments, converted to expected casualties and blended across nominal and failure footprints. | **<img src="assets/readme/icons/methods.svg" width="18" height="18" alt="" /> Open methods**<br/>Every formula is visible in the source, documented in the code, and checked by the test suite — no black boxes in the compliance path. |
 
-## ⚖️ Rule coverage
+## <img src="assets/readme/icons/rules.svg" width="22" height="22" alt="" /> Rule coverage
 
 | ID | Requirement | Limit | Source |
 |:--:|---|---|---|
@@ -107,7 +107,7 @@ only on the nominal case is flagged `WARN` rather than a clean pass. R9 is only
 computed for a controlled re-entry with a re-entry plan; otherwise it honestly
 reports `NEEDS_INPUT` instead of guessing.
 
-## 🧠 How it works
+## <img src="assets/readme/icons/architecture.svg" width="22" height="22" alt="" /> How it works
 
 ```mermaid
 flowchart LR
@@ -139,7 +139,7 @@ flowchart LR
 | **Report** | `ananke/report/dossier.py` | Six-section draft PDF with methods and sources |
 | **Interface** | `app/streamlit_app.py` | Setup → Results → Dossier, with the brand system applied |
 
-## 📐 Physics, in the open
+## <img src="assets/readme/icons/physics.svg" width="22" height="22" alt="" /> Physics, in the open
 
 ### Orbital lifetime
 
@@ -195,7 +195,7 @@ The `0.6` is the half-width of a standing person; the `1e-6` converts m² to km�
 > methods section states them explicitly, so a reviewer can see exactly what was
 > assumed.
 
-## 🧭 The design optimiser
+## <img src="assets/readme/icons/optimiser.svg" width="22" height="22" alt="" /> The design optimiser
 
 The optimiser answers the question every mission team actually asks: **what is the
 cheapest orbit we can fly that still passes?**
@@ -219,7 +219,7 @@ status: OK
   480 km · natural_decay · 0.0 kg
 ```
 
-## 🤖 The ML surrogate, kept honest
+## <img src="assets/readme/icons/ml.svg" width="22" height="22" alt="" /> The ML surrogate, kept honest
 
 A 200-tree random forest is trained on **10,000 missions simulated by Ananke's own
 physics**, then scored on 2,000 it never saw. Its only job is a fast lifetime
@@ -240,7 +240,7 @@ preview beside the result. It is never allowed to decide compliance.
 > post-disposal lifetime card is a different altitude and is never used for that
 > comparison.
 
-## ⚡ Quickstart
+## <img src="assets/readme/icons/quickstart.svg" width="22" height="22" alt="" /> Quickstart
 
 **Requirements:** Python 3.10+, a terminal, and the packages in `requirements.txt`.
 No API keys. The screening path runs entirely on your machine.
@@ -276,7 +276,7 @@ pytest -q
 > First launch trains the surrogate once (about tens of seconds) and caches it for
 > the life of the server process. Every later screening reuses the fitted model.
 
-## 🕹️ Using the app
+## <img src="assets/readme/icons/app.svg" width="22" height="22" alt="" /> Using the app
 
 | Step | What you do | What you get |
 |:--:|---|---|
@@ -286,7 +286,7 @@ pytest -q
 | **04** | Check the design optimiser | Cheapest compliant altitude, propellant needed, and a trade-space chart |
 | **05** | Open **Dossier** | A downloadable draft PDF of the current run |
 
-## 🐍 Python API
+## <img src="assets/readme/icons/python.svg" width="22" height="22" alt="" /> Python API
 
 The engine is importable without Streamlit.
 
@@ -349,7 +349,7 @@ generate_dossier_pdf(
 )
 ```
 
-## ✅ Validation
+## <img src="assets/readme/icons/validation.svg" width="22" height="22" alt="" /> Validation
 
 The test suite is the credibility case, not an afterthought.
 `tests/test_benchmarks.py` is written to be read on its own.
@@ -383,7 +383,7 @@ The test suite is the credibility case, not an afterthought.
 
 </details>
 
-## 🗂️ Project structure
+## <img src="assets/readme/icons/structure.svg" width="22" height="22" alt="" /> Project structure
 
 ```text
 Ananke/
@@ -417,7 +417,7 @@ Ananke/
 └── README.md
 ```
 
-## 🧱 Engineering decisions
+## <img src="assets/readme/icons/decisions.svg" width="22" height="22" alt="" /> Engineering decisions
 
 | Decision | Why |
 |---|---|
@@ -428,7 +428,7 @@ Ananke/
 | **Draft by construction** | The PDF carries the disclaimer on page one and in the appendix, not in a footnote |
 | **Reproducible by default** | Fixed seeds, fixed split, reported hold-out metrics — the same numbers on demand |
 
-## ⚠️ Limitations
+## <img src="assets/readme/icons/limitations.svg" width="22" height="22" alt="" /> Limitations
 
 > [!WARNING]
 > Ananke is a screening aid. It does not replace a mission-specific analysis, a
@@ -447,7 +447,7 @@ Ananke/
 - **The ML surrogate never decides compliance.** Physics and the rule engine are
   the sole source of truth.
 
-## 🗺️ Roadmap
+## <img src="assets/readme/icons/roadmap.svg" width="22" height="22" alt="" /> Roadmap
 
 | Stage | Item | Status |
 |---|:--:|:--:|
@@ -459,7 +459,7 @@ Ananke/
 | 2 | NASA DAS / ESA DRAMA benchmark | — |
 | 2 | Elliptical-orbit decay model | — |
 
-## ❓ FAQ
+## <img src="assets/readme/icons/faq.svg" width="22" height="22" alt="" /> FAQ
 
 <details>
 <summary><b>Is Ananke a regulatory submission?</b></summary>
@@ -509,7 +509,7 @@ Yes, if the rule uses a metric the engine already computes: add an entry to
 
 </details>
 
-## 🧰 Stack
+## <img src="assets/readme/icons/stack.svg" width="22" height="22" alt="" /> Stack
 
 <p>
   <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" alt="Python" />
@@ -525,7 +525,7 @@ Yes, if the rule uses a metric the engine already computes: add an entry to
   <img src="https://img.shields.io/badge/pytest-0A9EDC?style=flat-square&logo=pytest&logoColor=white" alt="pytest" />
 </p>
 
-## 🏛️ Team
+## <img src="assets/readme/icons/team.svg" width="22" height="22" alt="" /> Team
 
 <table>
 <tr>
@@ -544,7 +544,7 @@ Yes, if the rule uses a metric the engine already computes: add an entry to
 The Ananke and Tracr Aerospace marks are included in `assets/` for this project's
 use.
 
-## 📜 Disclaimer
+## <img src="assets/readme/icons/disclaimer.svg" width="22" height="22" alt="" /> Disclaimer
 
 > [!CAUTION]
 > **Screening only. Not a regulatory submission.** Ananke is a design-stage
